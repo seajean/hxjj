@@ -2,6 +2,7 @@
 var express = require('express')
 var cons = require('consolidate')
 var app = express()
+var expressLess = require('express-less');
 
 // Set Mustache as the Template Engine
 app.engine('html', cons.mustache);
@@ -12,7 +13,10 @@ app.set('views', __dirname + '/views');
 app.set('partials', __dirname + '/partials');
 
 // Set up Static Files
-app.use('/assets', express.static('public'));
+app.use('/', express.static('assets'));
+
+// Set up LESS
+app.use('/css', expressLess(__dirname + '/assets/less', { compress: true }));
 
 // Index Page
 app.get('/', function (req, res){
