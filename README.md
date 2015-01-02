@@ -17,6 +17,24 @@ Features:
 
 ---
 
+### Requirements
+
+```
+npm install
+```
+
+The above command should grab all the dependencies for you.
+
+However, the boilerplate currently uses these packages:
+
+* node.js
+* express.js
+* consolidate.js
+* express-less.js
+* mustache
+
+---
+
 ### Configure
 
 ```
