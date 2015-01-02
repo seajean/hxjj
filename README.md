@@ -5,8 +5,8 @@ A very simple boilerplate to get [express.js](http://expressjs.com) projects off
 Features:
 
 * Uses Mustache for templating (via Consolidate.js)
-	* Mustache partials not yet enabled correctly
-* Uses assets folder to serve static files to http://url/
+* Uses assets folder to serve static files to a folder at the root.
+	* /assets/css/file.css would be served to htp://localhost:port/css/file.css
 * Logs 404 errors to the console (Disable this for production environments.)
 * Logs all other errors to the console. (You may or may not want to disable this in production.)
 * Skeleton CSS

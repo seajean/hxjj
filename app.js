@@ -10,7 +10,6 @@ app.engine('html', cons.mustache);
 // Set up Views and Partials
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
-app.set('partials', __dirname + '/partials');
 
 // Set up Static Files
 app.use('/', express.static('assets'));
@@ -20,14 +19,20 @@ app.use('/css', expressLess(__dirname + '/assets/less', { compress: true }));
 
 // Index Page
 app.get('/', function (req, res){
-	res.render('index', {title: 'Home'});
+	res.render('index', 
+	  {
+		title: 'Home',
+		partials : {
+			head : '/partials/head'
+		}
+	  });
 });
 
 	// All Errors Except for 404 Page.
 	app.use(function(err, req, res, next){
 		var requestedURL = req.protocol + '://' + req.get('Host') + req.url;	
 		console.error(err.stack);
-		console.log(err.stack + 'URL: ' + requestedURL);
+		console.log(err.stack + '  URL: ' + requestedURL);
 		res.render('error', {title: err.stack});
 	});
 
