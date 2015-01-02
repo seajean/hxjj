@@ -37,6 +37,15 @@ However, the boilerplate currently uses these packages:
 
 ### Configure
 
+Via NPM:
+
+```
+cd myNewProject
+npm install express-starter
+```
+
+From repo:
+
 ```
 git clone https://github.com/shakna-israel/express-starter.git
 cd express-starter
